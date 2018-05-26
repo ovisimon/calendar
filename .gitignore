@@ -1,0 +1,11 @@
+/node_modules
+/build
+/out
+/out-tsc
+/int
+/dist
+npm-debug.log
+.env
+.DS_Store
+*.sublime-*
+.awcache

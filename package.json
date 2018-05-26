@@ -1,0 +1,83 @@
+{
+  "name": "basicapp",
+  "description": "",
+  "private": true,
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Ovi Simon",
+      "email": "ovisimon@yahoo.com"
+    }
+  ],
+  "scripts": {
+    "start": "npm install && npm run dev",
+    "dev": "shx rm -rf build && cross-env NODE_ENV=dev webpack --config webpack.js --watch",
+    "dev-local": "cross-env HH_API_URL=//localhost:3002 npm run dev",
+    "server": "nodemon -V -e ts --watch server --exec cross-env HH_SECRET=xx NODE_ENV=dev ts-node -- server/server.ts",
+    "heroku-postbuild": "NODE_ENV=int webpack --config config/webpack.int.js --progress && npm outdated",
+    "int": "NODE_ENV=int ts-node server/server.ts",
+    "clean": "shx rm -rf build",
+    "clean-all": "shx rm -rf node_modules && npm run clean",
+    "libs": "npm install",
+    "tslint": "tslint -p .",
+    "watch:tslint": "nodemon --watch server --ext ts --exec 'tslint -p .'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ovisimon"
+  },
+  "dependencies": {
+    "@angular/common": "^4.4.1",
+    "@angular/compiler": "^4.4.1",
+    "@angular/core": "^4.4.1",
+    "@angular/forms": "^4.4.1",
+    "@angular/http": "^4.4.1",
+    "@angular/platform-browser": "^4.4.1",
+    "@angular/platform-browser-dynamic": "^4.4.1",
+    "@angular/router": "^4.4.1",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.4",
+    "@types/node": "^6.0.92",
+    "bootstrap": "^4.0.0-beta",
+    "bootstrap-sass": "^3.3.7",
+    "connect-history-api-fallback": "^1.5.0",
+    "copy-webpack-plugin": "^4.2.3",
+    "core-js": "^2.5.1",
+    "cors": "^2.8.4",
+    "css-loader": "^0.28.5",
+    "html-webpack-plugin": "^2.30.1",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "postcss": "^6.0.9",
+    "postcss-loader": "^2.0.9",
+    "pug-html-loader": "^1.1.5",
+    "pug-plugin-ng": "0.0.2",
+    "raw-loader": "^0.5.1",
+    "rxjs": "^5.4.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.1.1",
+    "webpack": "^3.5.5",
+    "webpack-merge": "^4.1.0",
+    "zone.js": "^0.8.17"
+  },
+  "engines": {
+    "node": "6.11.x"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "cross-env": "^5.0.5",
+    "jquery": "^3.2.1",
+    "popper.js": "1.12.x",
+    "shx": "^0.2.2",
+    "tslint": "^5.8.0",
+    "tslint-webpack-plugin": "^1.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
