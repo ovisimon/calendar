@@ -1,1 +1,57 @@
 @import 'src/variables.scss';
+
+.inputs {
+	justify-content: center;
+}
+
+.calendar-body {
+	width: 100%;
+	margin-top: 30px;
+	flex-direction: column;
+}
+
+.days {
+	flex-grow: 1;
+	justify-content: space-between;
+}
+
+.day-name {
+	background-color: lightgrey;
+	text-align: center;
+	flex-grow: 1;
+	border-style: solid;
+	border-color: white;
+}
+
+.month-name {
+	flex-grow: 1;
+	background-color: #CDFDA8;
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+}
+
+.date-numbers {
+	flex-grow: 1;
+	justify-content: space-around;
+}
+
+.date-number {
+	background-color: #91DF54;
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+	width: 14.28%;
+}
+
+.weekend {
+	background-color: yellow;
+}
+
+.grey-date {
+	background-color: grey;
+}
+
+.hide-number {
+	display: none;
+}

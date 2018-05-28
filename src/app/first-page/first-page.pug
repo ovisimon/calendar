@@ -1,2 +1,33 @@
 .container
-  .d-flex
+	.d-flex.inputs
+		form.form-inline.mt-5
+			.form-group.d-flex
+				label(for="calendar-date")
+				input([(ngModel)]='today' type="date" name="calendar-date" class="form-control" placeholder="Date")
+				label(for="calendar-number")
+				input([(ngModel)]='number' type="number" name="calendar-number" class="form-control" placeholder="Number" (ngModelChange)="makeCalendar()")
+				label(for="calendar-country")
+				input([(ngModel)]='country' type="text" name="calendar-country" class="form-control"  placeholder="Country")
+	.d-flex.calendar-body
+		.d-flex.days
+			.day-name
+				p S
+			.day-name
+				p M
+			.day-name
+				p T
+			.day-name
+				p W
+			.day-name
+				p T
+			.day-name
+				p F
+			.day-name
+				p S
+		.d-flex.flex-column
+			.month.d-flex.flex-column(*ngFor="let month of months")
+				.month-name
+					p {{ month.name }} {{ month.year }}
+				.d-flex.flex-wrap.date-numbers
+					.date-number(*ngFor="let date of month.dates" [class.grey-date]="date.getFullYear() == '1969'" [class.weekend]="date.getDay() == '0' || date.getDay() == 6" [style.background-color]="getStyle()")
+						p([class.hide-number]="date.getFullYear() == '1969'") {{ getDateNumber(date) }}

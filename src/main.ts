@@ -4,7 +4,7 @@ import { AppModule } from 'app/app.module';
 
 declare let __ENV__: string;
 if (__ENV__ !== 'dev') {
-  enableProdMode();
+	enableProdMode();
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);

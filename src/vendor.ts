@@ -1,5 +1,5 @@
 // Bootstrap
- import 'bootstrap.scss';
+import 'bootstrap.scss';
 
 // Angular
 import '@angular/platform-browser';

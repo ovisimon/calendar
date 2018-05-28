@@ -1,33 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from 'app/app.component';
 import { FirstPage } from 'app/first-page/first-page.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/first-page', pathMatch: 'full' },
-  { path: 'first-page', component: FirstPage },
+	{ path: '', redirectTo: '/first-page', pathMatch: 'full' },
+	{ path: 'first-page', component: FirstPage }
 ];
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      {enableTracing: false}
-      )
-  ],
-  declarations: [
-    AppComponent,
-    FirstPage
-  ],
+	imports: [
+		BrowserModule,
+		RouterModule.forRoot(
+			appRoutes,
+			{enableTracing: false}
+			),
+		FormsModule
+	],
+	declarations: [
+		AppComponent,
+		FirstPage
+	],
 
-  providers: [
+	providers: [
 
-  ],
+	],
 
-  bootstrap: [AppComponent]
+	bootstrap: [AppComponent]
 })
 
 export class AppModule { }
