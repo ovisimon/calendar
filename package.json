@@ -64,7 +64,8 @@
     "zone.js": "^0.8.17"
   },
   "engines": {
-    "node": "6.11.x"
+    "node": "6.13.1",
+    "npm": "3.10.10"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",

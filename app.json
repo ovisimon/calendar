@@ -1,0 +1,8 @@
+{
+	"name": "Calendar app",
+	"description": "A calendar app made by Ovi Simon",
+	"repository": "https://github.com/ovisimon/calendar.git",
+	"logo": "",
+	"keywords": ["node"],
+	"image": ""
+}
